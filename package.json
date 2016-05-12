@@ -15,11 +15,14 @@
     "lodash.pick": "^4.2.0"
   },
   "devDependencies": {
-    "eslint": "^2.9.0"
+    "chai": "^3.5.0",
+    "eslint": "^2.9.0",
+    "lodash": "^4.12.0",
+    "mocha": "^2.4.5"
   },
   "scripts": {
     "man": "node ./src > man/doc.1",
-    "test": "eslint src/**"
+    "test": "eslint src/** test/** && mocha test"
   },
   "repository": {
     "type": "git",
