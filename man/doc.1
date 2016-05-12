@@ -1,0 +1,21 @@
+jwtq v1.0.0
+Command-line utility for inspecting and verifying JSON Web Tokens
+
+  Usage: src [options] [token]
+
+  Options:
+
+    -h, --help               output usage information
+    -V, --version            output the version number
+    --info                   Output library information
+    -v, --verify <secret>    Verify the jwt using the supplied secret
+    -A, --algorithm <value>  Algorithm to use for verification. Defaults to HS256. May be provided multiple times.
+    -i, --issuer <value>     If you want to check issuer (iss), provide a value here. May be provided multiple times.
+    -a, --audience <value>   If you want to check audience (aud), provide a value here.
+    -s, --subject <value>    If you want to check subject (sub), provide a value here.
+    --ignore-expiration      Do not validate the expiration of the token.
+    --ignore-not-before      Do not validate the not before claim of the token.
+    --clock-tolerance        Number of second to tolerate when checking the nbf and exp claims.
+    -j, --json               If supplied, decodes the JWT headers as well as the payload.
+    -c, --complete           If supplied, decodes the JWT headers as well as the payload.
+
