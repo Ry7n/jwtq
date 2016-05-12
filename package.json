@@ -18,7 +18,7 @@
     "eslint": "^2.9.0"
   },
   "scripts": {
-    "man": "node ./src --info > man/doc.1",
+    "man": "node ./src > man/doc.1",
     "test": "eslint src/**"
   },
   "repository": {

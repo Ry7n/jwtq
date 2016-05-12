@@ -38,7 +38,6 @@ function collect(val, memo) {
 program.
   version(pkg.version).
   usage('[options] [token]').
-  option('--info', 'Output library information').
   option('-v, --verify <secret>', 'Verify the jwt using the supplied secret').
   // verify options
   option('-A, --algorithm <value>', 'Algorithm to use for verification. Defaults to HS256. May be provided multiple times.', collect).
@@ -77,16 +76,15 @@ function jwtUtil(token) {
     then(result => JSON.stringify(result));
 }
 
-// Output program info
-if (program.info) {
-  console.info(`${pkg.name} v${pkg.version}`);
-  console.info(pkg.description);
-  program.help();
-}
-
 // we received a token, process it
 if (token) {
   output(jwtUtil(token, program));
+
+// otherwise if we're a tty, we were called with no args
+} else if (process.stdin.isTTY) {
+  console.info(`${pkg.name} v${pkg.version}`);
+  console.info(pkg.description);
+  program.help();
 
 // otherwise listen for one to be piped in
 } else {
