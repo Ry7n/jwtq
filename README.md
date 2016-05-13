@@ -3,7 +3,6 @@
 Command-line utility for inspecting and verifying JSON Web Tokens
 
 ```bash
-// TODO: publish to npm
 npm install -g jwtq
 ```
 

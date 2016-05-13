@@ -26,6 +26,9 @@ describe('jwtq', () => {
     }
   });
 
+  // TODO: fill out positive test cases testing each paramter
+  // TODO: add negative test cases
+
   const positiveTestCases = [
     {
       name: 'should decode tokens'
